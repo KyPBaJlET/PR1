@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FromBoard Delivery - Доставка из США, Европы и Азии в Россию</title>
+    <meta name="description" content="Доставка товаров из США, Европы и Азии в Россию. Растоможка груза, надежная упаковка, быстрая доставка от 550 рублей">
+    <style>
+        /* ===== СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #e5e7eb;
+            line-height: 1.5;
+        }
+        .main,
+        .header,
+        .footer {
+            max-width: 1920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* ===== ТИПОГРАФИЯ ===== */
+        h1, h2, h3 {
+            color: #111827;
+        }
+        /* ===== КОНТЕЙНЕРЫ И СЕТКА ===== */
+        .container {
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 768px) { .container { padding-left: 2rem; padding-right: 2rem; } }
+        @media (min-width: 1024px) { .container { padding-left: 4rem; padding-right: 4rem; } }
+        @media (min-width: 1280px) { .container { padding-left: 8rem; padding-right: 8rem; } }
+        @media (min-width: 1536px) { .container { padding-left: 12rem; padding-right: 12rem; } }
+        .main {
+            width: 100%;
+            padding: 2.5rem 1rem 0;
+        }
+        @media (min-width: 768px) { .main { padding: 3rem 2rem 0; } }
+        @media (min-width: 1024px) { .main { padding: 3rem 4rem 0; } }
+        @media (min-width: 1280px) { .main { padding: 3rem 6rem 0; } }
+        @media (min-width: 1536px) { .main { padding: 3rem 8rem 0; } }
+
+        /* ===== ШАПКА САЙТА ===== */
+        .header {
+            width: 100%;
+            background-color: #f9fafb;
+            padding: 1rem;
+            position: relative;
+        }
+        @media (min-width: 768px) { .header { padding: 1.5rem 2rem; } }
+        @media (min-width: 1024px) { .header { padding: 1.5rem 4rem; } }
+        @media (min-width: 1280px) { .header { padding: 1.5rem 6rem; } }
+        @media (min-width: 1536px) { .header { padding: 1.5rem 8rem; } }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        @media (min-width: 768px) { .header-top { gap: 2rem; } }
+        @media (min-width: 1024px) { .header-top { gap: 3rem; } }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 1.125rem;
+            font-weight: 900;
+            color: #111827;
+        }
+        @media (min-width: 768px) { .logo { font-size: 1.25rem; } }
+        @media (min-width: 1024px) { .logo { font-size: 1.5rem; } }
+        .logo img {
+            width: 35px;
+            height: auto;
+            object-fit: contain;
+        }
+        @media (min-width: 768px) { .logo img { width: 50px; } }
+        .header-info-group {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        @media (min-width: 768px) { 
+            .header-info-group { 
+                display: flex; 
+                gap: 0.75rem; 
+            } 
+        }
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.75rem;
+            color: #111827;
+        }
+        @media (min-width: 768px) { .header-info { font-size: 0.875rem; } }
+        @media (min-width: 1024px) { .header-info { font-size: 1rem; } }
+        .divider {
+            display: none;
+            width: 1px;
+            height: 4rem;
+            background-color: #c4b5fd;
+        }
+        @media (min-width: 1024px) { .divider { display: block; } }
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .phone {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #111827;
+        }
+        @media (min-width: 768px) { .phone { font-size: 1.5rem; } }
+        @media (min-width: 1024px) { .phone { font-size: 1.875rem; } }
+        .phone-subtitle {
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: #111827;
+            margin-top: 0.25rem;
+        }
+        @media (min-width: 768px) { .phone-subtitle { font-size: 1rem; } }
+        @media (min-width: 1024px) { .phone-subtitle { font-size: 1.25rem; } }
+        .nav {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        @media (min-width: 1024px) { 
+            .nav { 
+                display: flex; 
+                gap: 2rem; 
+                margin-top: 1.5rem; 
+                font-size: 1rem; 
+            } 
+        }
+        @media (min-width: 1280px) { .nav { gap: 4rem; } }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        @media (min-width: 1024px) { .nav-links { gap: 1.5rem; } }
+        .nav-link {
+            color: #111827;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link.active {
+            color: #8b5cf6;
+        }
+
+        /* ===== БУРГЕР-МЕНЮ ===== */
+        .burger-toggle {
+            display: none;
+        }
+        .burger-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .burger-button span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #111827;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .burger-toggle:checked ~ .header-top .burger-button span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .burger-toggle:checked ~ .header-top .burger-button span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger-toggle:checked ~ .header-top .burger-button span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        @media (max-width: 767px) {
+            .burger-button {
+                display: flex;
+            }
+            .nav,
+            .header-info-group {
+                display: none !important;
+            }
+            .burger-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                max-height: 90vh;
+                background-color: #f9fafb;
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+                overflow-y: auto;
+                padding: 1.5rem;
+                box-sizing: border-box;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            }
+            .burger-toggle:checked ~ .burger-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+            .burger-menu-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.25rem;
+            }
+            .burger-menu-logo {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 1.25rem;
+                font-weight: 900;
+                color: #111827;
+            }
+            .burger-menu-logo img {
+                width: 40px;
+                height: auto;
+            }
+            .burger-menu-phone {
+                font-size: 1.125rem;
+                font-weight: 900;
+                color: #111827;
+                white-space: nowrap;
+            }
+            .burger-menu-divider {
+                height: 2px;
+                background-color: #8b5cf6;
+                margin: 1rem 0;
+            }
+            .burger-menu-nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                margin: 0.5rem 0 1rem;
+            }
+            .burger-menu-link {
+                font-size: 0.9rem;
+                font-weight: 700;
+                color: #8b5cf6;
+                text-decoration: none;
+                padding: 0.5rem 0.75rem;
+                border-radius: 0.5rem;
+                text-align: center;
+                min-width: 80px;
+                transition: background 0.2s;
+            }
+            .burger-menu-link:hover {
+                background-color: #f3f4f6;
+            }
+            .burger-menu-apply {
+                background-color: #8b5cf6;
+                color: #fff !important;
+            }
+            .burger-menu-apply:hover {
+                background-color: #7c3aed;
+            }
+            .burger-menu-info {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1.25rem;
+                font-size: 0.8125rem;
+                color: #111827;
+                line-height: 1.4;
+                text-align: center;
+                margin-top: auto;
+                padding-top: 1rem;
+            }
+            .burger-menu-info span {
+                white-space: nowrap;
+            }
+        }
+        @media (min-width: 768px) {
+            .burger-menu,
+            .burger-button {
+                display: none !important;
+            }
+        }
+
+        /* ===== КНОПКИ ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-family: inherit;
+        }
+        @media (min-width: 768px) {
+            .btn {
+                padding: 0.625rem 1.75rem;
+            }
+        }
+        .btn-primary {
+            background-color: #8b5cf6;
+            color: #f9fafb;
+        }
+        .btn-primary:hover {
+            background-color: #7c3aed;
+        }
+        .btn-large {
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+        }
+        @media (min-width: 768px) {
+            .btn-large {
+                padding: 1rem 1.75rem;
+                font-size: 1rem;
+            }
+        }
+        .btn-centered {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .btn-centered {
+                margin-top: 2.25rem;
+            }
+        }
+
+/* ===== ГЛАВНЫЙ БАННЕР ===== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ≤1535px: стек */
+@media (max-width: 1535px) {
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero-text,
+    .hero-img-wrapper {
+        width: 100%;
+    }
+    .hero img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        object-fit: contain;
+    }
+    .calculator {
+        width: 100%;
+    }
+}
+
+/* 1536px – 1919px: текст | картинка → калькулятор под ними */
+@media (min-width: 1536px) and (max-width: 1919px) {
+    .hero {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .hero-left {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    .hero-text,
+    .hero-img-wrapper {
+        flex: 1;
+    }
+    .hero img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        object-fit: contain;
+    }
+    .calculator {
+        width: 100%;
+    }
+}
+
+/* ≥1920px: (текст + картинка сверху вниз) | калькулятор — выровнены по верху */
+@media (min-width: 1920px) {
+    .hero {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: flex-start; /* ← КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ */
+    }
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex: 1;
+        min-width: 0;
+    }
+    .hero-text,
+    .hero-img-wrapper {
+        width: 100%;
+    }
+    .hero img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        object-fit: contain;
+    }
+    .calculator {
+        flex: 1;
+        min-width: 0;
+        background-color: #f9fafb;
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start; /* ← ГАРАНТИРУЕТ выравнивание по верху */
+    }
+}
+
+        .hero h1 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #111827;
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 1.875rem; } }
+        @media (min-width: 1024px) { .hero h1 { font-size: 2.25rem; } }
+        .hero p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #111827;
+            margin-top: 0.75rem;
+        }
+        @media (min-width: 768px) { .hero p { font-size: 1.125rem; } }
+        @media (min-width: 1024px) { .hero p { font-size: 1.25rem; } }
+
+        /* ===== КАЛЬКУЛЯТОР ===== */
+        .calculator {
+            background-color: #f9fafb;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .calculator {
+                padding: 2rem;
+                margin-top: 2rem;
+            }
+        }
+        .calculator-header {
+            text-align: center;
+            max-width: 28rem;
+            margin: 0 auto;
+        }
+        .calculator h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        @media (min-width: 768px) { .calculator h2 { font-size: 1.875rem; } }
+        .calculator-header p {
+            font-size: 0.875rem;
+            color: #111827;
+            margin-top: 0.75rem;
+        }
+        @media (min-width: 768px) {
+            .calculator-header p {
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+        }
+        .calculator-form {
+            max-width: 42rem;
+            margin: 1.5rem auto 0;
+        }
+        @media (min-width: 768px) {
+            .calculator-form {
+                margin-top: 1.75rem;
+            }
+        }
+
+        /* ===== ФОРМЫ ===== */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .form-group {
+                gap: 1.5rem;
+            }
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 768px) {
+            .form-row {
+                gap: 1.5rem;
+            }
+        }
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #111827;
+            border-radius: 0.25rem;
+            background-color: transparent;
+            color: #111827;
+            font-size: 0.875rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            .form-input,
+            .form-textarea {
+                font-size: 1rem;
+            }
+        }
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #9ca3af;
+        }
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #8b5cf6;
+        }
+        .form-textarea {
+            resize: none;
+        }
+        .form-input-full {
+            grid-column: 1 / -1;
+        }
+        .form-submit {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .form-submit {
+                margin-top: 1.75rem;
+            }
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ СЕКЦИЙ ===== */
+        .section {
+            margin-top: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .section {
+                margin-top: 3rem;
+            }
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #111827;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 1.875rem;
+            }
+        }
+
+        /* ===== СЕКЦИЯ ПРЕИМУЩЕСТВ ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .benefits-grid {
+                gap: 1.5rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .benefit-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+        }
+        @media (min-width: 768px) {
+            .benefit-card {
+                padding: 1.5rem;
+            }
+        }
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #d1d5db;
+            flex-shrink: 0;
+            border-radius: 0.5rem;
+        }
+        @media (min-width: 768px) { .benefit-icon { width: 100px; height: 100px; } }
+        @media (min-width: 1024px) { .benefit-icon { width: 136px; height: 136px; } }
+        .benefit-content {
+            flex: 1;
+        }
+        .benefit-title {
+            font-size: 1.125rem;
+            font-weight: 900;
+            color: #111827;
+        }
+        @media (min-width: 768px) { .benefit-title { font-size: 1.25rem; } }
+        @media (min-width: 1024px) { .benefit-title { font-size: 1.5rem; } }
+        .benefit-description {
+            font-size: 0.75rem;
+            color: #111827;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            .benefit-description {
+                font-size: 0.875rem;
+                margin-top: 0.75rem;
+            }
+        }
+
+        /* ===== СЕКЦИЯ ГАРАНТИЙ ===== */
+        .guarantees-header {
+            text-align: center;
+        }
+        .guarantees-header p {
+            max-width: 47rem;
+            margin: 0.75rem auto 0;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #111827;
+        }
+        @media (min-width: 768px) {
+            .guarantees-header p {
+                font-size: 1rem;
+            }
+        }
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .certificates-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .certificate {
+            display: flex;
+            flex-direction: column;
+        }
+        .certificate img {
+            width: 100%;
+            border-radius: 0.5rem;
+            object-fit: contain;
+        }
+        .certificate-title {
+            font-size: 0.875rem;
+            font-weight: 900;
+            color: #111827;
+            margin-top: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .certificate-title {
+                font-size: 1rem;
+            }
+        }
+
+        /* ===== СЕКЦИЯ ОТЗЫВОВ ===== */
+        .reviews {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+        }
+        .quote-icon {
+            display: block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            border: none;
+            background: transparent;
+        }
+        .quote-icon:hover {
+            opacity: 1;
+        }
+        /* ← Стрелка влево = предыдущий */
+        .quote-icon.prev {
+            background-image: url('https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/15f62263c7ba0924b2c7d21b821a7c6ee0010c15?placeholderIfAbsent=true');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* → Стрелка вправо = следующий */
+        .quote-icon.next {
+            background-image: url('https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/f65d1afb9f691cee626c2b5af179ac9768f29b98?placeholderIfAbsent=true');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* Отзывы: <1536px — один отзыв по центру, кнопки по бокам */
+@media (max-width: 1535px) {
+    .reviews {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .reviews-content {
+        max-width: 500px;
+        width: 100%;
+    }
+    .reviews-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    /* Меняем местами кнопки: prev → справа, next → слева */
+    .reviews > .quote-icon.prev {
+        order: 3;
+    }
+    .reviews > .quote-icon.next {
+        order: 1;
+    }
+    .reviews-content {
+        order: 2;
+    }
+}
+
+/* Отзывы: ≥1536px — два отзыва в две колонки, без кнопок */
+@media (min-width: 1536px) {
+    .reviews {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    .reviews-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: none;
+        width: 100%;
+    }
+    .reviews-grid {
+        display: contents; /* ← позволяет колонкам работать напрямую */
+    }
+    .review-card {
+        background-color: #f9fafb;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        height: fit-content;
+    }
+}
+        @media (min-width: 768px) {
+            .quote-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        @media (max-width: 480px) {
+            .quote-icon {
+                width: 30px;
+                height: 30px;
+                opacity: 0.9;
+            }
+        }
+        .reviews-content {
+            flex: 1;
+        }
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .review-card {
+            background-color: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.75rem;
+        }
+        .review-text {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .review-author {
+            font-weight: bold;
+        }
+
+        /* ===== ФОРМА ОБРАТНОЙ СВЯЗИ ===== */
+        .contact-form {
+            background-color: #f9fafb;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        @media (min-width: 768px) {
+            .contact-form {
+                padding: 4rem;
+            }
+        }
+        .contact-form h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #111827;
+        }
+        @media (min-width: 768px) {
+            .contact-form h2 {
+                font-size: 1.875rem;
+            }
+        }
+        .contact-form-wrapper {
+            max-width: 32rem;
+            margin: 1.5rem auto 0;
+        }
+        @media (min-width: 768px) {
+            .contact-form-wrapper {
+                margin-top: 2rem;
+            }
+        }
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .contact-form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 768px) {
+            .contact-form-grid {
+                gap: 1.5rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .contact-form-grid > input:nth-child(1) { grid-column: 1; }
+            .contact-form-grid > input:nth-child(2) { grid-column: 2; }
+            .contact-form-grid > input:nth-child(3) { grid-column: 1; }
+            .contact-form-grid > input:nth-child(4) { grid-column: 2; }
+            .contact-form-grid > textarea { grid-column: 1 / -1; margin-top: 1rem; }
+        }
+
+/* ===== ПОДВАЛ ===== */
+.footer {
+    background-color: #111827;
+    padding: 1.5rem 1rem;
+    margin-top: 2.5rem;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+.footer-nav a {
+    color: #f9fafb;
+    text-decoration: none;
+}
+
+.footer-logo,
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo-content {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 900;
+    color: #f9fafb;
+}
+
+.footer-logo-icon {
+    width: 35px;
+    height: 50px;
+    background-color: #8b5cf6;
+    border-radius: 0.25rem;
+}
+
+.footer-phone {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #f9fafb;
+}
+.footer-phone-subtitle {
+    font-size: 1rem;
+    color: #f9fafb;
+    margin-top: 0.25rem;
+}
+
+/* Footer: 759px – 1535px */
+@media (min-width: 759px) and (max-width: 1535px) {
+    .footer-top {
+        align-items: stretch;
+    }
+    .footer-nav {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .footer-logo-contact-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+    .footer-logo {
+        margin: 0;
+    }
+    .footer-contact {
+        margin: 0;
+    }
+}
+
+/* Footer: ≥1536px */
+@media (min-width: 1536px) {
+    .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+    .footer-logo-contact-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <input type="checkbox" id="burger-toggle" class="burger-toggle">
+        <div class="header-top">
+            <div class="logo">
+                <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/13bd646854338b1cdc80e645ddbe7f7023080f9c?placeholderIfAbsent=true" alt="FromBoard Delivery Logo">
+                <div>FromBoard Delivery</div>
+            </div>
+            <label for="burger-toggle" class="burger-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div class="header-info-group">
+                <div class="header-info">
+                    <div>Доставляем товары из заграницы в Россию</div>
+                    <div>Стоимость от 550 рублей за заказ</div>
+                    <div>1 $ = 93 ₽ | 1 € = 99 ₽ | 1 ¥ = 13 ₽</div>
+                </div>
+                <div class="divider"></div>
+                <div class="header-contact">
+                    <div class="phone">+7 (800) 123 45-67</div>
+                    <div class="phone-subtitle">Звонки по России бесплатны</div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Калькулятор</a>
+                <a href="#" class="nav-link">О нас</a>
+                <a href="#" class="nav-link">Гарантии</a>
+                <a href="#" class="nav-link">Отзывы</a>
+            </div>
+            <button class="btn btn-primary">Оставить заявку</button>
+        </nav>
+        <div class="burger-menu">
+            <div class="burger-menu-content">
+                <label for="burger-toggle" class="burger-close">✕</label>
+                <div class="burger-menu-header">
+                    <div class="burger-menu-logo">
+                        <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/13bd646854338b1cdc80e645ddbe7f7023080f9c?placeholderIfAbsent=true" alt="FromBoard Delivery Logo">
+                        <div>FromBoard Delivery</div>
+                    </div>
+                    <div class="burger-menu-phone">+7 (800) 123 45-67</div>
+                </div>
+                <div class="burger-menu-divider"></div>
+                <nav class="burger-menu-nav">
+                    <a href="#" class="burger-menu-link">Калькулятор</a>
+                    <a href="#" class="burger-menu-link">О нас</a>
+                    <a href="#" class="burger-menu-link">Гарантии</a>
+                    <a href="#" class="burger-menu-link">Отзывы</a>
+                    <a href="#" class="burger-menu-link burger-menu-apply">Оставить заявку</a>
+                </nav>
+                <div class="burger-menu-divider"></div>
+                <div class="burger-menu-info">
+                    <span>Доставляем товары из заграницы в Россию</span>
+                    <span>Стоимость от 550 рублей за заказ</span>
+                    <span>1 $ = 93 ₽ | 1 € = 99 ₽ | 1 ¥ = 13 ₽</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="hero-text">
+            <h1>Без проблемная доставка купленных вещей из США, Европы и Азии в Россию</h1>
+            <p>Сэкономьте на покупках и наслаждайтесь мировыми брендами — наш сервис позволяет вам легко и удобно заказывать товары со всего мира и получать их в России</p>
+        </div>
+        <div class="hero-img-wrapper">
+            <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/807a07e291f27647b03ea411762395db700c25f9?placeholderIfAbsent=true" alt="Delivery illustration">
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="calculator-header">
+            <h2>Калькулятор доставки</h2>
+            <p>Посчитайте, сколько будет стоить перевозка покупки из зарубежа</p>
+        </div>
+                <form class="calculator-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Имя" class="form-input">
+                        <div class="form-row">
+                            <input type="email" name="email" placeholder="Почта" class="form-input">
+                            <input type="tel" name="phone" placeholder="Телефон" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="area" placeholder="Общая площадь, м²" class="form-input">
+                            <input type="text" name="weight" placeholder="Вес, кг" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="purchaseCountry" placeholder="Страна покупки" class="form-input">
+                            <input type="text" name="purchaseCity" placeholder="Город покупки" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="deliveryRegion" placeholder="Область доставки" class="form-input">
+                            <input type="text" name="deliveryCity" placeholder="Город доставки" class="form-input">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">Заказать расчёт</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="section">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Растоможка груза</h3>
+                        <p class="benefit-description">Мы берём на себя все формальности и бумажную волокиту, связанную с растаможкой груза</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Надёжная упаковка</h3>
+                        <p class="benefit-description">Все товары упаковываются нашими специалистами с особым вниманием к деталям, гарантируя, что они дойдут в безопасности и в отличном состоянии</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Быстро и выгодно</h3>
+                        <p class="benefit-description">Мы предлагаем быструю и выгодную доставку, чтобы вы могли насладиться покупками как можно скорее.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Удобный сервис</h3>
+                        <p class="benefit-description">Стремимся сделать процесс доставки максимально удобным для вас, чтобы опыт остался приятным и беззаботным</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Прозрачность работы</h3>
+                        <p class="benefit-description">Мы предоставляем полный контроль над каждым этапом доставки, от момента заказа до момента прибытия заказа</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Страхование груза</h3>
+                        <p class="benefit-description">Наше страхование обеспечивает полную защиту и покрытие почти все неприятные и неожиданные ситуации</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantees Section -->
+        <section class="section">
+            <div class="guarantees-header">
+                <h2 class="section-title">Гарантии качества</h2>
+                <p>Наши гарантии качества включают в себя полный спектр документов, необходимых для ввоза и вывоза товаров, а также для успешного бизнеса на мировом рынке. <br>Мы предоставляем вам надёжность и уверенность</p>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate">
+                    <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/918953ed5e41d7c7dd106dd2b4a2da8e5b66f826?placeholderIfAbsent=true" alt="Свидетельство о регистрации в РФ">
+                    <div class="certificate-title">Свидетельство о регистрации в РФ</div>
+                </div>
+                <div class="certificate">
+                    <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/7d35e597445a45c8a420f41d140f91c40a6a1ab1?placeholderIfAbsent=true" alt="Свидетельство о регистрации в США">
+                    <div class="certificate-title">Свидетельство о регистрации в США</div>
+                </div>
+                <div class="certificate">
+                    <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/e9f1ed322118f250f8ca82ee2e6f32b22f16e9c5?placeholderIfAbsent=true" alt="Свидетельство о регистрации в Китае">
+                    <div class="certificate-title">Свидетельство о регистрации в Китае</div>
+                </div>
+                <div class="certificate">
+                    <img src="https://api.builder.io/api/v1/image/assets/b137cdc57eba458e929c28e38b18b1ad/3cc8b27fce19726046a208a99a94b83a7513aa98?placeholderIfAbsent=true" alt="Свидетельство о регистрации в Великобритании">
+                    <div class="certificate-title">Свидетельство о регистрации в Великобритании</div>
+                </div>
+            </div>
+            <div class="btn-centered">
+                <button class="btn btn-primary btn-large">Показать больше документов</button>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="section">
+            <h2 class="section-title">Отзывы</h2>
+            <div class="reviews">
+                <button class="quote-icon prev" aria-label="Предыдущий отзыв"></button>
+                <div class="reviews-content">
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <blockquote class="review-text">Я уже несколько лет заказываю дизайнерскую одежду из Франции через ваш сервис, и он никогда меня не подводил.</blockquote>
+                            <cite class="review-author">Ольга</cite>
+                        </div>
+                        <div class="review-card">
+                            <blockquote class="review-text">Заказал шикарные часы из Швейцарии, и доставка была невероятно быстрой.</blockquote>
+                            <cite class="review-author">Игорь</cite>
+                        </div>
+                    </div>
+                </div>
+                <button class="quote-icon next" aria-label="Следующий отзыв"></button>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form section">
+            <h2>Остались вопросы?</h2>
+            <form class="contact-form-wrapper">
+                <div class="contact-form-grid">
+                    <input type="text" name="name" placeholder="Имя" class="form-input">
+                    <input type="email" name="email" placeholder="Почта" class="form-input">
+                    <input type="tel" name="phone" placeholder="Телефон" class="form-input">
+                    <input type="text" name="subject" placeholder="Тема вопроса" class="form-input">
+                    <textarea name="message" placeholder="Сообщение..." rows="5" class="form-textarea form-input-full"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit">Оставить заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <nav class="footer-nav">
+                <a href="#">Калькулятор</a>
+                <a href="#">О нас</a>
+                <a href="#">Гарантии</a>
+                <a href="#">Отзывы</a>
+            </nav>
+            <div class="footer-logo">
+                <div class="footer-logo-content">
+                    <div class="footer-logo-icon"></div>
+                    <div>FromBoard Delivery</div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <div class="footer-phone">+7 (800) 123 45-67</div>
+                <div class="footer-phone-subtitle">Звонки по России бесплатны</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-disclaimer">НЕ ЯВЛЯЕТСЯ ПУБЛИЧНОЙ ОФЕРТОЙ. Просим обратить внимание на то, что цены носят информационный и ознакомительный характер, а значит ни в какой мере не являются публичной офертой, которая определена в ст. 437 ГК РФ. Вся информация на сайте может содержать неточности, орфографические и иные ошибки, она не является полной, окончательно и исчерпывающей</div>
+            <div class="footer-credits">Разработкой макета занимался <a href="https://t.me/Wyndace" target="_blank" rel="noopener noreferrer">Васильев Александр</a> <a href="https://github.com/Wyndace" target="_blank" rel="noopener noreferrer">|</a> <a href="https://t.me/smthonit" target="_blank" rel="noopener noreferrer">Что-то на IT'шном</a></div>
+        </div>
+    </footer>
+</body>
+</html>
